@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://arbingerthailand.com
+
+# Sitemaps
+Sitemap: https://arbingerthailand.com/sitemap.xml
