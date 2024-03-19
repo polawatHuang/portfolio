@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  seac-web-strapi-client:
+    image: seac-web-strapi/client:develop
+    container_name: seac-web-strapi-client
+    volumes:
+      - ./tmp:/app/tmp
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    external_links:
+      - strapiapi
+    networks:
+      - strapiapi
+networks:
+  strapiapi:
+    external: true

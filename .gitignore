@@ -20,6 +20,8 @@
 *.pem
 gh-pages
 gh-pages.pub
+.env
+.env.production
 
 # debug
 npm-debug.log*
