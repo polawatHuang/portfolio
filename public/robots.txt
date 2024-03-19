@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://arbingerthailand.com
+Host: https://polawathuang.github.io/portfolio/
 
 # Sitemaps
-Sitemap: https://arbingerthailand.com/sitemap.xml
+Sitemap: https://polawathuang.github.io/portfolio/sitemap.xml
