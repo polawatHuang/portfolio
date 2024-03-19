@@ -3,23 +3,19 @@ name: Deploy to Github Pages
 on:
   push:
     branches:
-      - main
-
-  workflow_dispatch:
+      - main  # Set a branch to deploy
+  pull_request:
 
 jobs:
-  deployment:
+  deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true # Fetch Hugo themes (true or resursive)
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -36,14 +32,13 @@ jobs:
         with:
           hugo-version: '0.119.0'
           # extended: true
-      
+
       - name: Build
         run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          deploy_key: ${{ secrets.ACTIONS_SECRET_KEY }}
-          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          allow_empty_commit: true
