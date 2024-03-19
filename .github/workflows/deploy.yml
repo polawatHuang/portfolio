@@ -22,12 +22,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: PNPM install
-        run: pnpm install
+      - name: NPM install
+        run: npm install
       - name: Build
         run: |
-          pnpm run build
-          pnpm run export
+          npm run build
+          npm run export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
