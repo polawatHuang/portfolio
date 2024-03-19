@@ -3,19 +3,21 @@ name: Deploy to Github Pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
-  pull_request:
+      - main
+
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  deployment:
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -29,7 +31,6 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
