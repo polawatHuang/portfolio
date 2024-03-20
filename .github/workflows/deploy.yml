@@ -26,9 +26,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Copy CSS folder before running the build
+      # Check if _next/static/ directory exists before copying CSS folder
+      - name: Check if _next/static/ exists
+        run: test -d _next/static/ && echo "Directory exists" || echo "Directory does not exist"
+
+      # Copy CSS folder if _next/static/ exists
       - name: Copy CSS folder
-        run: cp -r _next/static/ ./out/_next/static/
+        run: |
+          if [ -d "_next/static/" ]; then
+            cp -r _next/static/css ./out/_next/static/
+          else
+            echo "No _next/static/ directory found."
+          fi
 
       - name: Build
         run: |
