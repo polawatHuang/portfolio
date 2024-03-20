@@ -1,32 +1,37 @@
-name: Deploy to Github Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # You can add more branches here if needed
-
+      - main
   workflow_dispatch:
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4  # Updated to the latest version
+    strategy:
+      matrix:
+        node-version: [20.x]
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4  # Updated to the latest version
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 'lts*'  # Uses the latest Long-Term Support (LTS) version
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install  # Simplified command
+        run: npm install
 
-      - name: Build for deployment
-        run: next build  # Uses the recommended Next.js build command (replaces deprecated `npm run build`)
+      - name: Build
+        run: |
+          npm run build
 
-      - name: Deploy to Github Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_SECRET_KEY }}
-          publish_dir: ./out  # No changes here
+          publish_dir: ./out
