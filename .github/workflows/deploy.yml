@@ -28,7 +28,7 @@ jobs:
 
       # Copy CSS folder before running the build
       - name: Copy CSS folder
-        run: cp -r _next/static/css ./out/_next/static/
+        run: cp -r _next/static/ ./out/_next/static/
 
       - name: Build
         run: |
