@@ -11,10 +11,10 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoVpark from '@/images/logos/v-park-logo.webp'
+import logoSCSpark from '@/images/logos/sc-spark-logo.webp'
+import logoSEAC from '@/images/logos/seac-logo.webp'
+import logoIdeaSpace from '@/images/logos/idea-space-logo.webp'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -189,35 +189,35 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'SEAC',
+      title: 'Software Engineer',
+      logo: logoSEAC,
+      start: '1 Jan 2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'V-Park Plaza',
+      title: 'Software Engineer',
+      logo: logoVpark,
+      start: '1 Jan 2022',
+      end: '31 Dec 2023',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'SC Spark Solutions',
+      title: 'Software Engineer',
+      logo: logoSCSpark,
+      start: '6 Dec 2021',
+      end: '31 Dec 2021',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'IDEA SPACE',
+      title: 'Junior Engineer',
+      logo: logoIdeaSpace,
+      start: '1 Jan 2019',
+      end: '31 Dec 2020',
     },
   ]
 
