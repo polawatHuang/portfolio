@@ -33,7 +33,7 @@ const assetPrefix = '/portfolio'
 const articles = [
   {
     title: 'SEAC Business Website',
-    date: '2024-03-26',
+    date: '1 Jan 2023',
     image: imageSeacWeb,
     slug: 'https://www.seasiacenter.com/',
     description:
