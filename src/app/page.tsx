@@ -310,18 +310,26 @@ export default async function Home() {
             system, and user acceptance.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="https://twitter.com/polawathuang" aria-label="Follow on X" icon={XIcon} />
             <SocialLink
+              target="_blank"
+              href="https://twitter.com/polawathuang"
+              aria-label="Follow on X"
+              icon={XIcon}
+            />
+            <SocialLink
+              target="_blank"
               href="https://www.instagram.com/joe_diary1996"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com/polawatHuang/portfolio"
+              target="_blank"
+              href="https://github.com/polawatHuang"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
+              target="_blank"
               href="https://www.linkedin.com/in/polawat-huang-b9484a200"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
