@@ -344,7 +344,7 @@ export default async function Home() {
             <div className="mb-lg flex justify-between">
               <div className="flex items-center gap-2">
                 <RectangleStackIcon className="h-12 w-12 flex-none" />
-                <h2 className="leading-8xl mb-1 text-5xl font-bold">
+                <h2 className="leading-7xl mb-1 text-4xl font-bold">
                   Projects
                 </h2>
               </div>
