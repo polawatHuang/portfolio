@@ -61,7 +61,7 @@ export default function About() {
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
               src={portraitImage}
-              alt=""
+              alt="Polawat Huang"
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
@@ -69,57 +69,106 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Hi! I’m Joe, a software engineer with hands-on experience in all levels of testing, including performance, functional, integration, system, and user acceptance.
+            About Me
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
-              my first program when I was 6 years old, just two weeks after my
-              mom brought home the brand new Macintosh LC 550 that I taught
-              myself to type on.
+              Hello! I&apos;m Polawat Huang (Joe), a passionate software
+              engineer dedicated to building innovative solutions and pushing
+              the boundaries of technology. With 6 years of experience in the
+              field, I specialize in Website development and mobile application
+              development.
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space.
-              When I was 8, I climbed the 40-foot oak tree at the back of our
-              yard while wearing my older sister’s motorcycle helmet, counted
-              down from three, and jumped — hoping the tree was tall enough that
-              with just a bit of momentum I’d be able to get to orbit.
+              My primary goal is to continually enhance my skills and knowledge
+              in software engineering. This includes staying updated with the
+              latest technologies, methodologies, and best practices in the
+              field. I aim to pursue certifications, attend workshops, and
+              engage in self-directed learning to broaden my expertise.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design,
-              while I recovered from the multiple surgeries it took to fix my
-              badly broken legs. It took nine iterations, but when I was 15 I
-              sent my dad’s Blackberry into orbit and was able to transmit a
-              photo back down to our family computer from space.
+              I have always been fascinated by the power of technology to
+              transform the world around us, and software engineering has been
+              my avenue to explore and contribute to this transformative force.
+              From a young age, I found joy in unraveling the mysteries of code,
+              discovering how lines of logic could create intricate systems and
+              bring ideas to life.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
-              civilian space suits and manned shuttle kits you can assemble at
-              home so that the next generation of kids really <em>can</em> make
-              it to orbit — from the comfort of their own backyards.
+              My passion for software engineering goes beyond mere technical
+              curiosity; it is a deeply ingrained drive to innovate,
+              problem-solve, and create solutions that make a meaningful impact.
+              Whether it&apos;s developing efficient algorithms, designing
+              intuitive user interfaces, or optimizing performance, I approach
+              each project with enthusiasm and a relentless pursuit of
+              excellence.
+            </p>
+            <p>
+              My commitment to excellence is reflected in every aspect of my
+              work. I believe in setting high standards for myself and
+              continuously pushing the boundaries of what&apos;s possible. I
+              strive for elegant, efficient solutions that not only meet the
+              requirements but exceed expectations in terms of performance,
+              reliability, and user experience.
+            </p>
+            <p>
+              I am constantly seeking opportunities to learn and grow, immersing
+              myself in new technologies, methodologies, and best practices. I
+              embrace challenges as opportunities for growth, tackling complex
+              problems with creativity, tenacity, and a collaborative spirit. I
+              am driven by a genuine desire to make a positive difference
+              through my work, whether it&apos;s streamlining processes,
+              improving efficiency, or enhancing user satisfaction.
+            </p>
+            <p>
+              Moreover, my commitment to excellence extends beyond technical
+              proficiency to encompass integrity, professionalism, and ethical
+              responsibility. I believe in transparency, open communication, and
+              a collaborative approach to problem-solving. I strive to foster a
+              culture of respect, trust, and continuous improvement in every
+              team and project I am involved in.
+            </p>
+            <p>
+              In summary, my passion for software engineering fuels my
+              relentless pursuit of excellence in every aspect of my work. I am
+              dedicated to pushing the boundaries of innovation, delivering
+              impactful solutions, and making a positive difference in the world
+              through technology.
             </p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={XIcon}>
+            <SocialLink href="https://twitter.com/polawathuang" icon={XIcon}>
               Follow on X
             </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+            <SocialLink
+              href="https://www.instagram.com/joe_diary1996"
+              icon={InstagramIcon}
+              className="mt-4"
+            >
               Follow on Instagram
             </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink
+              href="https://github.com/polawatHuang/portfolio"
+              icon={GitHubIcon}
+              className="mt-4"
+            >
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink
+              href="https://www.linkedin.com/in/polawat-huang-b9484a200"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:spencer@planetaria.tech"
+              href="mailto:polawathuang@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              spencer@planetaria.tech
+              polawathuang@gmail.com
             </SocialLink>
           </ul>
         </div>
