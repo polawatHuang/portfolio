@@ -27,6 +27,7 @@ import image5 from '@/images/photos/image-5.jpg'
 import imageSeacWeb from '@/images/photos/seac-web.webp'
 import imageArbinger from '@/images/photos/arbinger-web.webp'
 import imageBlanchard from '@/images/photos/blanchard-web.webp'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 // import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 // import { formatDate } from '@/lib/formatDate'
 
@@ -56,7 +57,7 @@ const articles = [
     slug: 'https://www.seasiacenter.com/',
     description:
       'SEAC website is online learning course platform for Executive Level People Leaders. Fontend for this website is using Next.js with Tailwind CSS. Backend using Strapi CMS.',
-  }
+  },
 ]
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -298,24 +299,27 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
+      <FadeInStagger faster>
+        <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+          {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+            <FadeIn key={image.src}>
+              <div
+                className={clsx(
+                  'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+                  rotations[imageIndex % rotations.length],
+                )}
+              >
+                <Image
+                  src={image}
+                  alt=""
+                  sizes="(min-width: 640px) 18rem, 11rem"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </FadeInStagger>
     </div>
   )
 }
@@ -370,66 +374,67 @@ export default async function Home() {
                 View all projects <ChevronRightIcon className="h-4 w-4" />
               </Link>
             </div>
-            <div className="mt-[3vw] flex flex-col gap-[60px]">
-              {articles.map((item) => {
-                return (
-                  <article
-                    key={item.title}
-                    className="group relative flex flex-col items-start"
-                  >
-                    <Image
-                      src={item.image}
-                      alt={'test'}
-                      height={512}
-                      width={512}
-                      className="z-20 mb-4 h-auto w-full rounded-xl shadow-lg"
-                      loading="lazy"
-                    />
-                    <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                      <Link href={item.slug} target="_blank">
-                        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                        <span className="relative z-10">{item.title}</span>
-                      </Link>
-                    </h2>
-                    <time
-                      className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 dark:text-zinc-500"
-                      dateTime="2022-09-05"
-                    >
-                      <span
-                        className="absolute inset-y-0 left-0 flex items-center"
-                        aria-hidden="true"
-                      >
-                        <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                      </span>
-                      {item.date}
-                    </time>
-                    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                      {item.description}
-                    </p>
-                    <div
-                      aria-hidden="true"
-                      className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                    >
-                      View website
-                      <svg
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden="true"
-                        className="ml-1 h-4 w-4 stroke-current"
-                      >
-                        <path
-                          d="M6.75 5.75 9.25 8l-2.5 2.25"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                    </div>
-                  </article>
-                )
-              })}
-            </div>
+            <FadeInStagger faster>
+              <div className="mt-[3vw] flex flex-col gap-[60px]">
+                {articles.map((item) => {
+                  return (
+                    <FadeIn key={item.title}>
+                      <article className="group relative flex flex-col items-start">
+                        <Image
+                          src={item.image}
+                          alt={'test'}
+                          height={512}
+                          width={512}
+                          className="z-20 mb-4 h-auto w-full rounded-xl shadow-lg"
+                          loading="lazy"
+                        />
+                        <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                          <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
+                          <Link href={item.slug} target="_blank">
+                            <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
+                            <span className="relative z-10">{item.title}</span>
+                          </Link>
+                        </h2>
+                        <time
+                          className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 dark:text-zinc-500"
+                          dateTime="2022-09-05"
+                        >
+                          <span
+                            className="absolute inset-y-0 left-0 flex items-center"
+                            aria-hidden="true"
+                          >
+                            <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+                          </span>
+                          {item.date}
+                        </time>
+                        <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                          {item.description}
+                        </p>
+                        <div
+                          aria-hidden="true"
+                          className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+                        >
+                          View website
+                          <svg
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            aria-hidden="true"
+                            className="ml-1 h-4 w-4 stroke-current"
+                          >
+                            <path
+                              d="M6.75 5.75 9.25 8l-2.5 2.25"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                      </article>
+                    </FadeIn>
+                  )
+                })}
+              </div>
+            </FadeInStagger>
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
