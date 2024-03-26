@@ -7,12 +7,12 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Spencer Sharp',
+    template: '%s - Polawat Huang',
     default:
-      'Spencer Sharp - Software designer, founder, and amateur astronaut',
+      'Polawat Huang - Software engineer, UX/UI deginer, and cyber security specialist',
   },
   description:
-    'I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
+    'Hi! I’m Joe, a software engineer with hands-on experience in all levels of testing, including performance, functional, integration, system, and user acceptance.',
 }
 
 export default function RootLayout({
