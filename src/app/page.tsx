@@ -7,7 +7,6 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { Button } from '@/components/Button'
-// import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -28,10 +27,6 @@ import imageSeacWeb from '@/images/photos/seac-web.webp'
 import imageArbinger from '@/images/photos/arbinger-web.webp'
 import imageBlanchard from '@/images/photos/blanchard-web.webp'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-// import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-// import { formatDate } from '@/lib/formatDate'
-
-const assetPrefix = '/portfolio'
 
 const articles = [
   {
@@ -118,35 +113,6 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     </svg>
   )
 }
-
-// function Article({ article }: { article: ArticleWithSlug }) {
-//   return (
-//     <Card as="article">
-//       <Image
-//         src={image1}
-//         className="z-20 mb-4 rounded-xl"
-//         height={512}
-//         width={512}
-//         alt={article ? article.title : 'Title'}
-//         loading="lazy"
-//       />
-//       <Card.Title href={`/articles/${article ? article.slug : ''}`}>
-//         {article ? article.title : 'Title'}
-//       </Card.Title>
-//       <Card.Eyebrow
-//         as="time"
-//         dateTime={article ? article.date : '2024-03-26'}
-//         decorate
-//       >
-//         {formatDate(article ? article.date : '2024-03-26')}
-//       </Card.Eyebrow>
-//       <Card.Description>
-//         {article ? article.description : 'test some description'}
-//       </Card.Description>
-//       <Card.Cta>Read article</Card.Cta>
-//     </Card>
-//   )
-// }
 
 function SocialLink({
   icon: Icon,
