@@ -25,6 +25,8 @@ import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import imageSeacWeb from '@/images/photos/seac-web.webp'
+import imageArbinger from '@/images/photos/arbinger-web.webp'
+import imageBlanchard from '@/images/photos/blanchard-web.webp'
 // import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 // import { formatDate } from '@/lib/formatDate'
 
@@ -32,13 +34,29 @@ const assetPrefix = '/portfolio'
 
 const articles = [
   {
+    title: 'Arbinger Business Website',
+    date: '1 Mar 2024',
+    image: imageArbinger,
+    slug: 'https://arbingerthailand.seasiacenter.com/',
+    description:
+      'The Arbinger Institute is a global training and consulting firm that helps individuals, teams, and organizations achieve breakthrough results by shifting from the default self-focus we call an inward mindset to the others-inclusive focus of an outward mindset. Fontend for this website is using Next.js with Tailwind CSS. Backend using Strapi CMS.',
+  },
+  {
+    title: 'Blanchard Business Website',
+    date: '1 Jan 2024',
+    image: imageBlanchard,
+    slug: 'https://blanchard.seasiacenter.com/',
+    description:
+      'Blanchard is the leadership and management training provider innovative companies trust to develop their people. Learn more about our consulting programs. Fontend for this website is using Next.js with Tailwind CSS. Backend using Strapi CMS.',
+  },
+  {
     title: 'SEAC Business Website',
     date: '1 Jan 2023',
     image: imageSeacWeb,
     slug: 'https://www.seasiacenter.com/',
     description:
       'SEAC website is online learning course platform for Executive Level People Leaders. Fontend for this website is using Next.js with Tailwind CSS. Backend using Strapi CMS.',
-  },
+  }
 ]
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -352,7 +370,7 @@ export default async function Home() {
                 View all projects <ChevronRightIcon className="h-4 w-4" />
               </Link>
             </div>
-            <div className="mt-[3vw]">
+            <div className="mt-[3vw] flex flex-col gap-[60px]">
               {articles.map((item) => {
                 return (
                   <article
@@ -364,7 +382,7 @@ export default async function Home() {
                       alt={'test'}
                       height={512}
                       width={512}
-                      className="z-20 mb-4 h-auto w-full rounded-xl"
+                      className="z-20 mb-4 h-auto w-full rounded-xl shadow-lg"
                       loading="lazy"
                     />
                     <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
