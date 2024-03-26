@@ -242,11 +242,15 @@ function Resume() {
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
-        ))}
-      </ol>
+      <FadeInStagger faster>
+        <ol className="mt-6 space-y-4">
+          {resume.map((role, roleIndex) => (
+            <FadeIn key={roleIndex}>
+              <Role role={role} />
+            </FadeIn>
+          ))}
+        </ol>
+      </FadeInStagger>
       <Button
         href="https://drive.google.com/file/d/1HFYif00-gjDMqM4_dWBN9xNo84ZnIIzJ/view?usp=sharing"
         target="_blank"
