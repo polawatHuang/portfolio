@@ -11,16 +11,16 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Polawat Huang',
     default:
-      'Polawat Huang - Software engineer, UX/UI deginer, and cyber security specialist',
+      'Polawat Huang - Software engineer, and UX/UI deginer.',
   },
   description:
     'Hi! I’m Joe, a software engineer with hands-on experience in all levels of testing, including performance, functional, integration, system, and user acceptance.',
   openGraph: {
     title:
-      'Polawat Huang - Software engineer, UX/UI deginer, and cyber security specialist',
+      'Polawat Huang - Software engineer, and UX/UI deginer.',
     description:
       'Hi! I’m Joe, a software engineer with hands-on experience in all levels of testing, including performance, functional, integration, system, and user acceptance.',
-    images: [imageOG.src],
+    images: '/image-2.jpg',
   },
 }
 
