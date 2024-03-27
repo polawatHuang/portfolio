@@ -9,48 +9,67 @@ import logoCertificate3 from '@/images/certificates/microservice.webp'
 import logoCertificate4 from '@/images/certificates/foundations-of-cyber-security.webp'
 import logoCertificate5 from '@/images/certificates/manage-security-risk.webp'
 import logoCertificate6 from '@/images/certificates/foundations-of-user-experience.webp'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 
 const projects = [
   {
     name: 'Foundations of Project Management',
     description:
       'An online none-credit cource authorized by Google and offered through Coursera.',
-    link: { href: 'http://coursera.org/verify/Q2KDEW9M5PA9', label: 'Certified by Google' },
+    link: {
+      href: 'http://coursera.org/verify/Q2KDEW9M5PA9',
+      label: 'Certified by Google',
+    },
     logo: logoCertificate1,
   },
   {
     name: 'Python Project for AI & Application Development',
     description:
       'An online none-credit cource authorized by IBM and offered through Coursera.',
-    link: { href: 'http://coursera.org/verify/TRHG9ARX59WE', label: 'Certified by IBM' },
+    link: {
+      href: 'http://coursera.org/verify/TRHG9ARX59WE',
+      label: 'Certified by IBM',
+    },
     logo: logoCertificate2,
   },
   {
     name: 'Application Development using Microservices and Serverless',
     description:
       'An online none-credit cource authorized by IBM and offered through Coursera.',
-    link: { href: 'http://coursera.org/verify/PNWXNV7BWKGB', label: 'Certified by IBM' },
+    link: {
+      href: 'http://coursera.org/verify/PNWXNV7BWKGB',
+      label: 'Certified by IBM',
+    },
     logo: logoCertificate3,
   },
   {
     name: 'Foundations of Cybersecurity',
     description:
       'An online none-credit cource authorized by Google and offered through Coursera.',
-    link: { href: 'http://coursera.org/verify/BGCPEZCYVADX', label: 'Certified by Google' },
+    link: {
+      href: 'http://coursera.org/verify/BGCPEZCYVADX',
+      label: 'Certified by Google',
+    },
     logo: logoCertificate4,
   },
   {
     name: 'Play It Safe: Manage Security Risks',
     description:
       'An online none-credit cource authorized by Google and offered through Coursera.',
-    link: { href: 'http://coursera.org/verify/J8CZP4NXTTQ8', label: 'Certified by Google' },
+    link: {
+      href: 'http://coursera.org/verify/J8CZP4NXTTQ8',
+      label: 'Certified by Google',
+    },
     logo: logoCertificate5,
   },
   {
     name: 'Foundations of User Experience (UX) Design',
     description:
       'An online none-credit cource authorized by Google and offered through Coursera.',
-    link: { href: 'http://coursera.org/verify/N4DYV456YCTA', label: 'Certified by Google' },
+    link: {
+      href: 'http://coursera.org/verify/N4DYV456YCTA',
+      label: 'Certified by Google',
+    },
     logo: logoCertificate6,
   },
 ]
@@ -68,7 +87,8 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Certificates',
-  description: 'My responsibilities also included building microservices in NodeJS using ExpressJS. Along with that I also worked on developing backend components using Oracle, Mysql and MongoDB. In addition, I was working with Rest API integration which involved writing both the database and UI/UX interactions. On top of that I worked on Spring framework along with Postman.',
+  description:
+    'My responsibilities also included building microservices in NodeJS using ExpressJS. Along with that I also worked on developing backend components using Oracle, Mysql and MongoDB. In addition, I was working with Rest API integration which involved writing both the database and UI/UX interactions. On top of that I worked on Spring framework along with Postman.',
 }
 
 export default function Certificates() {
@@ -77,33 +97,37 @@ export default function Certificates() {
       title="My Certificates"
       intro="My responsibilities also included building microservices in NodeJS using ExpressJS. Along with that I also worked on developing backend components using Oracle, Mysql and MongoDB. In addition, I was working with Rest API integration which involved writing both the database and UI/UX interactions. On top of that I worked on Spring framework along with Postman."
     >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="w-full z-20">
-              <Image
-                src={project.logo}
-                alt={project.name}
-                width={350}
-                height={350}
-                className="w-full h-auto shadow-lg rounded-lg"
-                loading="lazy"
-              />
-            </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
-        ))}
-      </ul>
+      <FadeInStagger faster>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.map((project) => (
+            <FadeIn key={project.name}>
+              <Card as="li">
+                <div className="z-20 w-full">
+                  <Image
+                    src={project.logo}
+                    alt={project.name}
+                    width={350}
+                    height={350}
+                    className="h-auto w-full rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                </h2>
+                <Card.Description>{project.description}</Card.Description>
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                  <LinkIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2">{project.link.label}</span>
+                </p>
+              </Card>
+            </FadeIn>
+          ))}
+        </ul>
+      </FadeInStagger>
     </SimpleLayout>
   )
 }
