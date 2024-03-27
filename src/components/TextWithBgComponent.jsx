@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import imageBg from '@/images/polawat-profile-picture.jpg'
+import imageBg from '@/images/polawat-profile-picture.webp'
 import { FadeIn } from './FadeIn'
 
 // Props type

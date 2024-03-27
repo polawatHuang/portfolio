@@ -22,7 +22,9 @@ export function SimpleLayout({
           </p>
         </FadeIn>
       </header>
-      {children && <div className="mt-16 sm:mt-20">{children}</div>}
+      <FadeIn>
+        {children && <div className="mt-16 sm:mt-20">{children}</div>}
+      </FadeIn>
     </Container>
   )
 }

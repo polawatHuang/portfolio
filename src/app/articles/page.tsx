@@ -5,7 +5,7 @@ import { SearchAndFilterComponent } from '@/components/SearchAndFilterComponent'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import { blogs } from '@/lib/blogs'
 import { BlogCardComponent } from '@/components/BlogCardComponent'
-import ImageBg from '@/images/polawat-profile-picture.jpg'
+import ImageBg from '@/images/polawat-profile-picture.webp'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 const filterTitles = (dataArray: any, keyword: any) => {
