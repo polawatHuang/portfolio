@@ -1,43 +1,43 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import { TextWithBgComponent } from '@/components/TextWithBgComponent'
-import { useRouter } from 'next/router'
-import { blogs } from '@/libs/blogs.js'
+import { blogs } from '@/lib/blogs'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import SocialShare from '@/components/SocialShare/SocialShare'
+import Image, { StaticImageData } from "next/image"
+import { SimpleLayout } from '@/components/SimpleLayout'
 
 const MOCK_CASE_STUDIES = blogs
 
 export default function Page() {
-  const router = useRouter()
-  const { slug } = router.query
   const [title, setTitle] = useState('')
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState<StaticImageData>()
   const [content, setContent] = useState('')
   const [desc, setDesc] = useState('')
   const [url, setUrl] = useState('')
 
   useEffect(() => {
-    MOCK_CASE_STUDIES.filter((item) => item.slug === slug).map((item) => {
+    MOCK_CASE_STUDIES.filter((item) => item.slug === 'what-is-ai').map((item) => {
       setTitle(item.title)
       setImage(item.image)
       setDesc(item.desc)
       setContent(item.content)
     })
-    setUrl('https://arbingerthailand.seasiacenter.com/blog/' + slug)
-  }, [slug])
+    setUrl('https://polawathuang.vercel.app/articles/')
+  }, [])
 
   return (
     <>
-      <TextWithBgComponent title={title} backgroundImage={image} />
-      <Container className={'py-[60px]'}>
+      <SimpleLayout title={title} intro={''}>
         <section
-          id="case-study-detail"
           className="relative grid min-h-screen w-full"
         >
+          {/* <TextWithBgComponent title={title} backgroundImage={image} /> */}
+          <Image src={image || ''} alt={title} className="w-full h-auto mb-[64px]" width={300} height={200} />
           <FadeIn>
             <div className="mb-[16px] flex items-center gap-4">
-              {'en' === 'th' ? 'แชร์ไปที่' : 'Share on'}
+              {false ? 'แชร์ไปที่' : 'Share on'}
               <SocialShare
                 facebook={url}
                 twitter={url}
@@ -52,7 +52,7 @@ export default function Page() {
             ></div>
           </FadeIn>
         </section>
-      </Container>
+      </SimpleLayout>
     </>
   )
 }

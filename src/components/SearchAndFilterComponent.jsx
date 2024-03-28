@@ -4,13 +4,13 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 // setSearchKeyword: useState('')
 export const SearchAndFilterComponent = ({ setSearchKeyword, total }) => {
   return (
-    <div className="relative mb-[30px] flex w-full items-center justify-between gap-[30px] px-[1.8em] lg:mx-auto lg:max-w-[90.625rem]">
+    <div className="relative mb-[30px] flex w-full items-center justify-between gap-[30px]">
       <div className="relative md:w-[50%] lg:w-[30%]">
         <input
           type="text"
           aria-label="Search"
           placeholder={
-            'en' === 'th' ? 'ค้นหาชื่อบทความ...' : 'Search for article names...'
+            'en' === 'th' ? 'ค้นหาชื่อบทความ...' : 'Search ...'
           }
           onKeyUp={(e) => {
             setSearchKeyword(e.target.value)
@@ -22,7 +22,7 @@ export const SearchAndFilterComponent = ({ setSearchKeyword, total }) => {
       <div>
         <span className="text-gray-500">
           {'en' === 'th' ? 'ผลการค้นหา' : 'Result'} 1-1{' '}
-          {'en' === 'th' ? 'จาก' : 'of'} {0}
+          {'en' === 'th' ? 'จาก' : 'of'} {total? total : 0}
         </span>
       </div>
     </div>
