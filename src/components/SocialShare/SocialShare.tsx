@@ -1,5 +1,11 @@
 
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, PinterestShareButton, EmailShareButton } from 'react-share';
+import imageFB from '@/images/logos/ic-facebook.svg'
+import imageX from '@/images/logos/twitter-x-logo-black-square.webp'
+import imageLinkedIn from '@/images/logos/ic-linkedin.svg'
+import imagePin from '@/images/logos/ic-pinterest.svg'
+import imageEmail from '@/images/logos/ic-email.svg'
+import Image from 'next/image';
 
 interface ISocialShareProps {
   facebook: string;
@@ -14,28 +20,28 @@ const SocialShare: React.FC<ISocialShareProps> = ({ facebook, twitter, linkedin,
     <FacebookShareButton
       url={facebook}
     >
-      <img src="/assets/icons/ic-facebook.svg" alt="icon-facebook" />
+      <Image src={imageFB} width={20} height={20} alt="icon-facebook" />
     </FacebookShareButton>
     <TwitterShareButton
       url={twitter}
     >
-      <img src="/assets/icons/twitter-x-logo-black-square-20853.png" alt="icon-twitter" width={20} height={20} className="rounded-sm" />
+      <Image src={imageX.src} alt="icon-twitter" width={20} height={20} className="rounded-sm" />
     </TwitterShareButton>
     <LinkedinShareButton
       url={linkedin}
     >
-      <img src="/assets/icons/ic-linkedin.svg" alt="icon-linkedin" />
+      <Image width={20} height={20} src={imageLinkedIn} alt="icon-linkedin" />
     </LinkedinShareButton>
     <PinterestShareButton
       url={pinterest}
       media={pinterest}
     >
-      <img src="/assets/icons/ic-pinterest.svg" alt="icon-pinterest" />
+      <Image width={20} height={20} src={imagePin} alt="icon-pinterest" />
     </PinterestShareButton>
     <EmailShareButton
       url={email}
     >
-      <img src="/assets/icons/ic-email.svg" alt="icon-email" />
+      <Image width={20} height={20} src={imageEmail} alt="icon-email" />
     </EmailShareButton>
   </div>)
 }
