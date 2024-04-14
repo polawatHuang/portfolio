@@ -10,6 +10,7 @@ import logoCertificate4 from '@/images/certificates/foundations-of-cyber-securit
 import logoCertificate5 from '@/images/certificates/manage-security-risk.webp'
 import logoCertificate6 from '@/images/certificates/foundations-of-user-experience.webp'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import Layout from '@/pages/layout'
 
 const projects = [
   {
@@ -93,41 +94,43 @@ export const metadata: Metadata = {
 
 export default function Certificates() {
   return (
-    <SimpleLayout
-      title="My Certificates"
-      intro="My responsibilities also included building microservices in NodeJS using ExpressJS. Along with that I also worked on developing backend components using Oracle, Mysql and MongoDB. In addition, I was working with Rest API integration which involved writing both the database and UI/UX interactions. On top of that I worked on Spring framework along with Postman."
-    >
-      <FadeInStagger faster>
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    <Layout>
+        <SimpleLayout
+        title="My Certificates"
+        intro="My responsibilities also included building microservices in NodeJS using ExpressJS. Along with that I also worked on developing backend components using Oracle, Mysql and MongoDB. In addition, I was working with Rest API integration which involved writing both the database and UI/UX interactions. On top of that I worked on Spring framework along with Postman."
         >
-          {projects.map((project) => (
-            <FadeIn key={project.name}>
-              <Card as="li">
-                <div className="z-20 w-full">
-                  <Image
-                    src={project.logo}
-                    alt={project.name}
-                    width={350}
-                    height={350}
-                    className="h-auto w-full rounded-lg shadow-lg"
-                    loading="lazy"
-                  />
-                </div>
-                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
-                </h2>
-                <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                  <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{project.link.label}</span>
-                </p>
-              </Card>
-            </FadeIn>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </SimpleLayout>
+        <FadeInStagger faster>
+            <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+            >
+            {projects.map((project) => (
+                <FadeIn key={project.name}>
+                <Card as="li">
+                    <div className="z-20 w-full">
+                    <Image
+                        src={project.logo}
+                        alt={project.name}
+                        width={350}
+                        height={350}
+                        className="h-auto w-full rounded-lg shadow-lg"
+                        loading="lazy"
+                    />
+                    </div>
+                    <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                    <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                    </h2>
+                    <Card.Description>{project.description}</Card.Description>
+                    <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">{project.link.label}</span>
+                    </p>
+                </Card>
+                </FadeIn>
+            ))}
+            </ul>
+        </FadeInStagger>
+        </SimpleLayout>
+    </Layout>
   )
 }

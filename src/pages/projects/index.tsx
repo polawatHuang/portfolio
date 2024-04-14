@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import imageSeac from '@/images/photos/seac-web.webp'
@@ -9,6 +8,7 @@ import imageBlanchard from '@/images/photos/blanchard-web.webp'
 import imageYourNextU from '@/images/photos/yournextu.webp'
 import imageFoodDee from '@/images/photos/foodee.webp'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import Layout from '@/pages/layout'
 
 const projects = [
   {
@@ -73,41 +73,43 @@ export const metadata: Metadata = {
 
 export default function Projects() {
   return (
-    <SimpleLayout
-      title="My Projects"
-      intro="I've worked on a lot of projects over the years, but these are the ones I'm most pleased of. Many of them are open-source, so if you notice anything that interests you, go into the code and contribute if you have suggestions for how to enhance it."
-    >
-      <FadeInStagger faster>
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    <Layout>
+        <SimpleLayout
+        title="My Projects"
+        intro="I've worked on a lot of projects over the years, but these are the ones I'm most pleased of. Many of them are open-source, so if you notice anything that interests you, go into the code and contribute if you have suggestions for how to enhance it."
         >
-          {projects.map((project) => (
-            <FadeIn key={project.name}>
-              <Card as="li">
-                <div className="z-20 w-full">
-                  <Image
-                    src={project.logo}
-                    alt={project.name}
-                    width={350}
-                    height={350}
-                    className="h-auto w-full rounded-lg shadow-lg"
-                    loading="lazy"
-                  />
-                </div>
-                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
-                </h2>
-                <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                  <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{project.link.label}</span>
-                </p>
-              </Card>
-            </FadeIn>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </SimpleLayout>
+        <FadeInStagger faster>
+            <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+            >
+            {projects.map((project) => (
+                <FadeIn key={project.name}>
+                <Card as="li">
+                    <div className="z-20 w-full">
+                    <Image
+                        src={project.logo}
+                        alt={project.name}
+                        width={350}
+                        height={350}
+                        className="h-auto w-full rounded-lg shadow-lg"
+                        loading="lazy"
+                    />
+                    </div>
+                    <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                    <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                    </h2>
+                    <Card.Description>{project.description}</Card.Description>
+                    <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">{project.link.label}</span>
+                    </p>
+                </Card>
+                </FadeIn>
+            ))}
+            </ul>
+        </FadeInStagger>
+        </SimpleLayout>
+    </Layout>
   )
 }
