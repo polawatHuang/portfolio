@@ -14,7 +14,7 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoToyota from '@/images/photos/toyota-icon.webp'
+import logoToyota from '@/images/logos/toyota-logo.webp'
 import logoSEAC from '@/images/logos/seac-logo.webp'
 import logoVpark from '@/images/logos/v-park-logo.webp'
 import logoSCSpark from '@/images/logos/sc-spark-logo.webp'
