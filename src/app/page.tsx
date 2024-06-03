@@ -14,9 +14,10 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
+import logoToyota from '@/images/photos/toyota-icon.webp'
+import logoSEAC from '@/images/logos/seac-logo.webp'
 import logoVpark from '@/images/logos/v-park-logo.webp'
 import logoSCSpark from '@/images/logos/sc-spark-logo.webp'
-import logoSEAC from '@/images/logos/seac-logo.webp'
 import logoIdeaSpace from '@/images/logos/idea-space-logo.webp'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
@@ -204,14 +205,21 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'SEAC',
+      company: 'Toyota Motor Asia',
       title: 'Software Engineer',
-      logo: logoSEAC,
-      start: '1 Jan 2023',
+      logo: logoToyota,
+      start: '1 Apr 2024',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+    {
+      company: 'SEAC',
+      title: 'Software Engineer',
+      logo: logoSEAC,
+      start: '1 Jan 2023',
+      end: '31 Mar 2024',
     },
     {
       company: 'V-Park Plaza',
